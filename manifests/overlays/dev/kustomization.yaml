@@ -6,35 +6,35 @@ configMapGenerator:
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=latest
+      - DD_VERSION=59b7e70bd298bef57570f5a50b4b3433e98a8dfc
 
   - name: pass-summary-api-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=latest
+      - DD_VERSION=59b7e70bd298bef57570f5a50b4b3433e98a8dfc
 
   - name: pass-image-api-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=latest
+      - DD_VERSION=59b7e70bd298bef57570f5a50b4b3433e98a8dfc
 
   - name: load-test-service-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=latest
+      - DD_VERSION=59b7e70bd298bef57570f5a50b4b3433e98a8dfc
 
 images:
   - name: ghcr.io/datadog/sdlc-gitops-sample-stack/pass-api
-    newTag: "latest"
+    newTag: "59b7e70bd298bef57570f5a50b4b3433e98a8dfc"
 
   - name: ghcr.io/datadog/sdlc-gitops-sample-stack/pass-summary-api
-    newTag: "latest"
+    newTag: "59b7e70bd298bef57570f5a50b4b3433e98a8dfc"
 
   - name: ghcr.io/datadog/sdlc-gitops-sample-stack/pass-image-api
-    newTag: "latest"
+    newTag: "59b7e70bd298bef57570f5a50b4b3433e98a8dfc"
 
   - name: ghcr.io/datadog/sdlc-gitops-sample-stack/load-test-service
-    newTag: "latest"
+    newTag: "59b7e70bd298bef57570f5a50b4b3433e98a8dfc"
