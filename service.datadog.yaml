@@ -46,7 +46,29 @@ links:
     url: https://github.com/scottgerring/sdlc-gitops-sample-stack
 tags:
   - cost-center:engineering
-
+---
+schema-version: v2.2
+dd-service: pass-image-api
+team: datadog-demo-team
+application: demo-app
+tier: "1"
+type: web
+languages:
+  - rust
+contacts:
+  - type: email
+    contact: no-one@localhost
+links:
+  - name: Source
+    type: repo
+    provider: github
+    url: https://github.com/scottgerring/sdlc-gitops-sample-stack
+  - name: docs
+    type: doc
+    provider: link
+    url: https://github.com/scottgerring/sdlc-gitops-sample-stack
+tags:
+  - cost-center:engineering
 # Where do we get these from? Do we have to set this up in the UI and then edit the files?
 #ci-pipeline-fingerprints:
 #  - how-do-i-get-this
