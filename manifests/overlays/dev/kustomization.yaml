@@ -6,35 +6,35 @@ configMapGenerator:
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=6b3aafab7e4a947c0aa359213909b12ed6e80b29
+      - DD_VERSION=d0cb8e16abf50b5a5ddefabccef020995935f85d
 
   - name: pass-summary-api-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=6b3aafab7e4a947c0aa359213909b12ed6e80b29
+      - DD_VERSION=d0cb8e16abf50b5a5ddefabccef020995935f85d
 
   - name: pass-image-api-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=6b3aafab7e4a947c0aa359213909b12ed6e80b29
+      - DD_VERSION=d0cb8e16abf50b5a5ddefabccef020995935f85d
 
   - name: load-test-service-config
     behavior: merge
     literals:
       - DD_ENV=dev
-      - DD_VERSION=6b3aafab7e4a947c0aa359213909b12ed6e80b29
+      - DD_VERSION=d0cb8e16abf50b5a5ddefabccef020995935f85d
 
 images:
   - name: ghcr.io/scottgerring/sdlc-gitops-sample-stack/pass-api
-    newTag: "6b3aafab7e4a947c0aa359213909b12ed6e80b29"
+    newTag: "d0cb8e16abf50b5a5ddefabccef020995935f85d"
 
   - name: ghcr.io/scottgerring/sdlc-gitops-sample-stack/pass-summary-api
-    newTag: "6b3aafab7e4a947c0aa359213909b12ed6e80b29"
+    newTag: "d0cb8e16abf50b5a5ddefabccef020995935f85d"
 
   - name: ghcr.io/scottgerring/sdlc-gitops-sample-stack/pass-image-api
-    newTag: "6b3aafab7e4a947c0aa359213909b12ed6e80b29"
+    newTag: "d0cb8e16abf50b5a5ddefabccef020995935f85d"
 
   - name: ghcr.io/scottgerring/sdlc-gitops-sample-stack/load-test-service
-    newTag: "6b3aafab7e4a947c0aa359213909b12ed6e80b29"
+    newTag: "d0cb8e16abf50b5a5ddefabccef020995935f85d"
