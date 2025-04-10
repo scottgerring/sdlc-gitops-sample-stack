@@ -12,7 +12,8 @@ resources:
   - db/service.yaml
   - load-test-service/deployment.yaml
   - load-test-service/configmap.yaml
-
+  - ingress/ingress.yaml
+  
 secretGenerator:
   - name: postgres-secret
     literals:
