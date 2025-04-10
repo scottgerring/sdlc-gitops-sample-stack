@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /passes
+            pathType: Prefix
+            backend:
+              service:
+                name: pass-api
+                port:
+                  number: 8080
+          - path: /pass-summary
+            pathType: Prefix
+            backend:
+              service:
+                name: pass-summary-api
+                port:
+                  number: 8080 
