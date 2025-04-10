@@ -9,12 +9,14 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.sdlcdemo.passapi.client.Pass;
 import org.sdlcdemo.passapi.client.PassApiService;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -67,5 +69,31 @@ public class PassSummaryResource {
         response.put("method", "inefficient-individual-requests");
         
         return response;
+    }
+
+    /**
+     * This endpoint periodically fails with a 500 to simulate unreliable services.
+     * When it succeeds, it returns pass summary data like the main /pass-summary endpoint.
+     */
+    @GET
+    @Path("/breaky")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response breakyEndpoint() {
+        Random r = new Random();
+        if (r.nextInt(3) == 0) { // ~33% chance of failure
+            throw new RuntimeException("Something has gone terribly amiss");
+        }
+
+        Set<Pass> allPasses = passApiService.all();
+        int totalAscent = allPasses.stream()
+                .mapToInt(Pass::ascent)
+                .sum();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("pass_count", allPasses.size());
+        response.put("total_ascent", totalAscent);
+        response.put("status", "ok");
+
+        return Response.ok(response).build();
     }
 }

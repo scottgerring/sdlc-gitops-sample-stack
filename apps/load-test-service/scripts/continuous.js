@@ -121,8 +121,10 @@ function testPassImageApi(passApiUrl, imageApiUrl) {
 
 function testPassSummaryApi(baseUrl) {
   // Either use normal or slow endpoint
-  if (Math.random() < 0.9) {
-    // 90% of the time, use normal endpoint
+  const endpointSelector = Math.random();
+  
+  if (endpointSelector < 0.8) {
+    // 80% of the time, use normal endpoint
     const summaryRes = http.get(`${baseUrl}/pass-summary`, {
       tags: { endpoint: 'get_pass_summary', mode: 'continuous' }
     });
@@ -130,7 +132,7 @@ function testPassSummaryApi(baseUrl) {
     check(summaryRes, {
       'status is 200': (r) => r.status === 200
     });
-  } else {
+  } else if (endpointSelector < 0.9) {
     // 10% of the time, use slow endpoint
     const slowRes = http.get(`${baseUrl}/pass-summary/slow`, {
       tags: { endpoint: 'get_pass_summary_slow', mode: 'continuous' }
@@ -138,6 +140,15 @@ function testPassSummaryApi(baseUrl) {
     
     check(slowRes, {
       'slow endpoint status is 200': (r) => r.status === 200
+    });
+  } else {
+    // 10% of the time, use breaky endpoint
+    const breakyRes = http.get(`${baseUrl}/pass-summary/breaky`, {
+      tags: { endpoint: 'get_pass_summary_breaky', mode: 'continuous' }
+    });
+    
+    check(breakyRes, {
+      'breaky endpoint status is 200': (r) => r.status === 200
     });
   }
 }
