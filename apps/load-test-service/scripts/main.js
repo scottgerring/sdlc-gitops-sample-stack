@@ -173,6 +173,11 @@ export function testCombinedWorkflow() {
   const summaryRes = http.get(`${passSummaryApiUrl}/pass-summary`, {
     tags: { endpoint: 'workflow_summary' }
   });
+
+  // 1b. Then get the summary data again, but slow
+  const summaryResB = http.get(`${passSummaryApiUrl}/pass-summary/slow`, {
+    tags: { endpoint: 'workflow_summary' }
+  });
   
   // 2. Then fetch all passes
   const passesRes = http.get(`${passApiUrl}/passes`, {
