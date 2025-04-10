@@ -1,6 +1,10 @@
 resources:
   - ../../base
 
+# Patches for resources
+patchesStrategicMerge:
+  - aws-ingress-patch.yaml
+
 configMapGenerator:
   - name: pass-api-config
     behavior: merge
