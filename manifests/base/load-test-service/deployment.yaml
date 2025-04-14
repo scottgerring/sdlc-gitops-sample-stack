@@ -5,7 +5,7 @@ metadata:
   labels:
     app: load-test-service
 spec:
-  replicas: 0 # Disable by default!
+  replicas: 1 # TODO - turn this off before merge back to Datadog
   selector:
     matchLabels:
       app: load-test-service
