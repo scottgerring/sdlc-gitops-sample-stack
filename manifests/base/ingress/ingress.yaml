@@ -6,6 +6,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0
+    alb.ingress.kubernetes.io/healthcheck-path: /ping
     #alb.ingress.kubernetes.io/security-groups: <...>
 spec:
   rules:
