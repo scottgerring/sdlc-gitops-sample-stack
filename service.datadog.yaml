@@ -23,6 +23,9 @@ links:
     url: https://github.com/scottgerring/sdlc-gitops-sample-stack
 tags:
   - cost-center:engineering
+ci-pipeline-fingerprints:
+  - "6-Ez-uNcXXI6"
+  - "haAQtDN9bTYE"
 ---
 schema-version: v2.2
 dd-service: pass-summary-api
@@ -46,6 +49,9 @@ links:
     url: https://github.com/scottgerring/sdlc-gitops-sample-stack
 tags:
   - cost-center:engineering
+ci-pipeline-fingerprints:
+  - "6-Ez-uNcXXI6"
+  - "haAQtDN9bTYE"  
 ---
 schema-version: v2.2
 dd-service: pass-image-api
@@ -69,6 +75,9 @@ links:
     url: https://github.com/scottgerring/sdlc-gitops-sample-stack
 tags:
   - cost-center:engineering
+ci-pipeline-fingerprints:
+  - "6-Ez-uNcXXI6"
+  - "haAQtDN9bTYE"  
 # Where do we get these from? Do we have to set this up in the UI and then edit the files?
 #ci-pipeline-fingerprints:
 #  - how-do-i-get-this
