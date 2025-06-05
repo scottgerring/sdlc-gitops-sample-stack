@@ -9,6 +9,6 @@ MarkupSafe==3.0.1
 packaging==24.1
 pycparser==2.22
 PyYAML==6.0.1
-requests==2.31.0
+requests==2.32.2
 resolvelib==1.0.1
 urllib3==2.2.3
